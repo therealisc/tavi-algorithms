@@ -1,0 +1,28 @@
+{
+  "configurations":  {
+    "run - simple": {
+      "adapter": "CodeLLDB",
+      "configuration": {
+        "program": "${workspaceRoot}/Tutorial",
+        "env": {
+          "BASEPATH": "${workspaceRoot}"
+        },
+        "args": []
+      }
+    },
+    "run - test mode": {
+      "extends": "run - simple",
+      "configuration": {
+        "args": [ "-mode", "test" ]
+      }
+    },
+    "run - verbose mode": {
+      "extends": "run - test mode",
+      "configuration": {
+        "env": {
+          "LOGLEVEL": "verbose"
+        }
+      }
+    }
+  }
+}
