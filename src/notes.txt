@@ -1,0 +1,4 @@
+A kilobyte is approximately 1,000 bytes 
+(specifically, 2 to the 10th power or, in decimal form, 1,024 bytes).
+
+1 byte = 8 bits
