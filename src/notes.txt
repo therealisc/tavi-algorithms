@@ -1,3 +1,8 @@
+Daca ai ajuns aici, well done. Programarea incepe cu chestii simple si poate deveni super complicata. Totusi a devenit ca un lego in ultimii ani, deci e mult mai usor de inteles.
+Incearca sa faci urmatorul tutorial, dupa care da-mi mesaj.
+
+https://www.w3schools.com/html/
+
 A kilobyte is approximately 1,000 bytes 
 (specifically, 2 to the 10th power or, in decimal form, 1,024 bytes).
 
