@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <time.h>
+#include <math.h>
 #include "my_class.h"
 
 using namespace std;
@@ -65,7 +66,7 @@ int main ()
     double endTime = (float)clock()/CLOCKS_PER_SEC;
     double timeElapsed = endTime - startTime;
 
-    cout << "Time elapsed: " << timeElapsed << endl;
+    cout << "Time elapsed: "<< fixed << timeElapsed << endl;
 
     return 0;
 }

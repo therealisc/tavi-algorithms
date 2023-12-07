@@ -1,3 +1,6 @@
+compiler_depend.make
+*.internal
+
 # Prerequisites
 *.d
 
