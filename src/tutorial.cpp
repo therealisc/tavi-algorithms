@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <time.h>
 #include "my_class.h"
 
 using namespace std;
@@ -7,7 +8,69 @@ using namespace N;
 
 #define N 100
 
+void fast_vector_sort()
+{
+    //cout << "Cate numere vrei sa sortezi? ";
+    int n = 100;
+    int i;
+    //cin >> n;
+
+    int sorted_vector[N];
+    for (i = 0; i < N; ++i) {
+        sorted_vector[i] = 0;
+    }
+
+    //cout << endl;
+
+    //cout << "Introdu numerele pe care vrei sa le sortezi? ";
+
+    int unsorted_vector[n] = {
+        22, 23, 22, 44, 3, 1, 4, 5, 98, 8, 22, 23, 22, 44, 3, 1, 4, 5, 98, 8,
+        22, 23, 22, 44, 3, 1, 4, 5, 98, 8, 22, 23, 22, 44, 3, 1, 4, 5, 98, 8,
+        22, 23, 22, 44, 3, 1, 4, 5, 98, 8, 22, 23, 22, 44, 3, 1, 4, 5, 98, 8,
+        22, 23, 22, 44, 3, 1, 4, 5, 98, 8, 22, 23, 22, 44, 3, 1, 4, 5, 98, 8,
+        22, 23, 22, 44, 3, 1, 4, 5, 98, 8, 22, 23, 22, 44, 3, 1, 4, 5, 98, 8,
+    };
+
+    int numar_introdus;
+    int numar_maxim;
+    for (i = 0; i < n; i++) {
+        //cin >> numar_introdus;
+        numar_introdus = unsorted_vector[i];
+        sorted_vector[numar_introdus]++;
+
+        if (numar_introdus > numar_maxim)
+            numar_maxim = numar_introdus;
+    }
+
+    cout << endl;
+
+    for (i = 0; i <= numar_maxim; i++) {
+        if (sorted_vector[i] > 0) {
+            for (int y = 0; y < sorted_vector[i]; y++) {
+                cout<< i << " ";
+            }
+        }
+    }
+}
+
 int main ()
+{
+    double startTime = (float)clock()/CLOCKS_PER_SEC;
+
+    /* Do work */
+    fast_vector_sort();
+    cout << endl;
+
+    double endTime = (float)clock()/CLOCKS_PER_SEC;
+    double timeElapsed = endTime - startTime;
+
+    cout << "Time elapsed: " << timeElapsed << endl;
+
+    return 0;
+}
+
+void numbers_sort()
 {
     cout << sizeof(int) << endl;
 
@@ -48,8 +111,6 @@ int main ()
     }
 
     cout << endl;
-
-    return 0;
 }
 
 void anotimpuri_switch()
