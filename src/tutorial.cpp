@@ -7,7 +7,8 @@
 using namespace std;
 using namespace N;
 
-#define N 100
+//#define N 100
+#define N 6
 
 void fast_vector_sort()
 {
@@ -55,18 +56,121 @@ void fast_vector_sort()
     }
 }
 
+/////////////////////////////////////////////////////////
+
+// N Queen
+
+int board[N][N];
+/*
+   = {
+   { 0, 0, 0, 0 },
+   { 0, 0, 0, 0 },
+   { 0, 0, 0, 0 },
+   { 0, 0, 0, 0 }
+   };
+   */
+int nSol = 0;
+
+
+// A utility function to print solution
+void printSolution()
+{
+    nSol++;
+    printf("Solutia nr. %d:\n", nSol);
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            if(board[i][j])
+                printf("◼   ");
+            else
+                printf("□   ");
+        }
+        printf("\n\n");
+    }
+}
+
+/// A utility function to check if a queen can
+/// be placed on board[row][col]. Note that this
+/// function is called when "col" queens are
+/// already placed in columns from 0 to col-1.
+/// So we need to check only left side for
+/// attacking queens
+bool isSafe(int row, int col)
+{
+    int i, j;
+
+    /// Check this row on left side
+    for (i = 0; i < col; i++)
+        if (board[row][i])
+            return false;
+
+    /// Check upper diagonal on left side
+    for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
+        if (board[i][j])
+            return false;
+
+    /// Check lower diagonal on left side
+    for (i = row, j = col; j >= 0 && i < N; i++, j--)
+        if (board[i][j])
+            return false;
+
+    return true;
+}
+
+
+bool BTR(int col)
+{
+    // Base case: If all queens are placed
+    // then return true
+    if (col >= N)
+    {
+        printSolution();
+        //return true;
+    }
+
+    /// Consider this column and try placing
+    /// this queen in all rows one by one
+    for (int i = 0; i < N; i++)
+    {
+        /// Check if the queen can be placed on
+        /// board[i][col]
+        if (isSafe(i, col))
+        {
+            /// Place this queen in board[i][col]
+            board[i][col] = 1;
+
+            /// Recur to place rest of the queens
+            if (BTR(col + 1))
+                return true;
+
+            /// If placing queen in board[i][col]
+            /// doesn't lead to a solution, then
+            /// remove queen from board[i][col]
+            board[i][col] = 0; /// BACK_TRACK
+        }
+    }
+
+    /// If the queen cannot be placed in any row in
+    /// this column col then return false
+    return false;
+}
+
+
 int main ()
 {
-    double startTime = (float)clock()/CLOCKS_PER_SEC;
+//    double startTime = (float)clock()/CLOCKS_PER_SEC;
+//
+//    /* Do work */
+//    fast_vector_sort();
+//    cout << endl;
+//
+//    double endTime = (float)clock()/CLOCKS_PER_SEC;
+//    double timeElapsed = endTime - startTime;
+//
+//    cout << "Time elapsed: "<< fixed << timeElapsed << endl;
+//
 
-    /* Do work */
-    fast_vector_sort();
-    cout << endl;
+    BTR(0);
 
-    double endTime = (float)clock()/CLOCKS_PER_SEC;
-    double timeElapsed = endTime - startTime;
-
-    cout << "Time elapsed: "<< fixed << timeElapsed << endl;
 
     return 0;
 }
