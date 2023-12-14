@@ -8,7 +8,7 @@ using namespace std;
 using namespace N;
 
 //#define N 100
-#define N 6
+#define N 7
 
 void fast_vector_sort()
 {
