@@ -1,8 +1,6 @@
 #include "my_class.h"
 #include "queens.h"
 #include <iostream>
-#include <math.h>
-#include <string>
 #include <time.h>
 
 using namespace std;
