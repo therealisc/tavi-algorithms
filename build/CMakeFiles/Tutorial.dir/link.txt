@@ -1,1 +1,1 @@
-/usr/bin/c++ "CMakeFiles/Tutorial.dir/home/therealisc/repos/tavi-algorithms/src/tutorial.cpp.o" -o Tutorial 
+/usr/bin/c++ "CMakeFiles/Tutorial.dir/home/therealisc/repos/tavi-algorithms/src/tutorial.cpp.o" "CMakeFiles/Tutorial.dir/home/therealisc/repos/tavi-algorithms/src/my_class.cpp.o" "CMakeFiles/Tutorial.dir/home/therealisc/repos/tavi-algorithms/src/queens.cpp.o" -o Tutorial 

@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Tutorial.dir/home/therealisc/repos/tavi-algorithms/src/my_class.cpp.o"
+  "CMakeFiles/Tutorial.dir/home/therealisc/repos/tavi-algorithms/src/my_class.cpp.o.d"
+  "CMakeFiles/Tutorial.dir/home/therealisc/repos/tavi-algorithms/src/queens.cpp.o"
+  "CMakeFiles/Tutorial.dir/home/therealisc/repos/tavi-algorithms/src/queens.cpp.o.d"
   "CMakeFiles/Tutorial.dir/home/therealisc/repos/tavi-algorithms/src/tutorial.cpp.o"
   "CMakeFiles/Tutorial.dir/home/therealisc/repos/tavi-algorithms/src/tutorial.cpp.o.d"
   "Tutorial"
